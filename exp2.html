@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Music Track Upload for Review</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 40px;
+    }
+    .upload-container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input[type="text"], select, input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    input[type="submit"] {
+      margin-top: 20px;
+      padding: 12px;
+      width: 100%;
+      background: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="upload-container">
+    <h2>Submit Your Music for Review</h2>
+    <form action="/submit-track" method="post" enctype="multipart/form-data">
+      <label for="artist">Artist Name:</label>
+      <input type="text" id="artist" name="artist" required>
+
+      <label for="title">Track Title:</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="genre">Genre:</label>
+      <select id="genre" name="genre" required>
+        <option value="">--Select Genre--</option>
+        <option>Pop</option>
+        <option>Hip Hop</option>
+        <option>Rock</option>
+        <option>Electronic</option>
+        <option>Classical</option>
+        <option>Jazz</option>
+        <option>Other</option>
+      </select>
+
+      <label for="track">Upload Track (MP3/WAV):</label>
+      <input type="file" id="track" name="track" accept=".mp3,.wav" required>
+
+      <input type="submit" value="Submit for Review">
+    </form>
+  </div>
+
+</body>
+</html>
